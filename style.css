@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F1E8B8;
+    color: #191919;
+    font-family: 'Love Ya Like A Sister', sans-serif;
+}
+
+body header {
+    width: max-content;
+    margin: 15px auto 0 auto;
+    letter-spacing: 2px;
+}
+
+body header h5 {
+    font-family: 'Love Ya Like A Sister', sans-serif;
+    text-align: right;
+    margin-top: -3px;
+    letter-spacing: 1px;
+}
+
+.container {
+    width: max-content;
+    margin: 20px auto;
+}
+
+.container button {
+    background-color: inherit;
+    font-family: sans-serif;
+    margin: 0 10px;
+    padding: 8px 12px;
+    border-color: #191919;
+    border-radius: 2px; 
+}
+
+#rainbow {
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+}
+
