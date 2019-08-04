@@ -34,6 +34,7 @@ body header h5 {
     padding: 8px 12px;
     border-color: #191919;
     border-radius: 2px; 
+    cursor: pointer;
 }
 
 #rainbow {
@@ -41,14 +42,20 @@ body header h5 {
 }
 
 .grid_container {
-    height: 430px;
-    width: 430px; 
     display: grid;
-    background-color: #191919;  
+    margin: 0 auto;
+    background-color: white;
+    width: 70vh; /* 15*16px */
+    height: 70vh;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
 }
 
 .grid_item {
-    border: 1px #F1E8B8 solid;
+    height: 100%;
+    width: 100%; 
+    border: 1px solid black;
+    display: inline-block;
 }
 
 
