@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -41,10 +42,10 @@ body header h5 {
     background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
 }
 
-.grid_container {
+#grid {
     display: grid;
     margin: 0 auto;
-    background-color: white;
+    border: 2px dotted #191919;
     width: 70vh; /* 15*16px */
     height: 70vh;
     grid-template-columns: repeat(16, 1fr);
@@ -54,7 +55,7 @@ body header h5 {
 .grid_item {
     height: 100%;
     width: 100%; 
-    border: 1px solid black;
+    border: 1px solid #191919;
     display: inline-block;
 }
 
