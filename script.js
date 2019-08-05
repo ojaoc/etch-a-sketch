@@ -1,7 +1,11 @@
-// Select container
+// Grid container
 let container_div = document.getElementById('grid');
-// Prompt size
+// Button reset
+let reset_button = document.getElementById('reset');
+// Button size
 let size_button = document.getElementById('size');
+// Button rainbow
+let rainbow_button = document.getElementById('rainbow');
 
 function createGrid(widthAndHeight) {
     let numberOfCells = widthAndHeight * widthAndHeight;
@@ -16,7 +20,7 @@ function createGrid(widthAndHeight) {
 
 function selectColor(color) {
     if (!color) {
-        color = 'black';
+        color = '#191919';
     }
     let gridBlockNodeList = container_div.querySelectorAll('div');
     let gridBlocksArray = Array.from(gridBlockNodeList);
@@ -25,8 +29,32 @@ function selectColor(color) {
     });
 }
 
+function resetGrid() {
+    while (container_div.firstChild) {
+        container_div.removeChild(container_div.firstChild);
+    }
+}
+
+function restoreGrid() {
+    resetGrid();
+    createGrid(16);
+    selectColor();
+    return;
+}
+
+function resizeGrid() {
+    let selected_size = prompt('How many squares would you like? W=H; Default= 16x16', 16);
+    resetGrid();
+    createGrid(selected_size);
+    selectColor();
+}
+
 createGrid(16);
 selectColor();
+
+reset_button.addEventListener('click', (e) => restoreGrid());
+size_button.addEventListener('click', (e) => resizeGrid());
+
 
 
 
