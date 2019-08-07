@@ -44,9 +44,16 @@ function restoreGrid() {
 
 function resizeGrid() {
     let selected_size = prompt('How many squares would you like? W=H; Default= 16x16', 16);
+    if (Math.pow(selected_size, 2) == container_div.childElementCount) {
+        return alert('That size is already set.');
+    }
     resetGrid();
     createGrid(selected_size);
     selectColor();
+}
+
+function toggleRainbow() {
+    
 }
 
 createGrid(16);
@@ -54,15 +61,4 @@ selectColor();
 
 reset_button.addEventListener('click', (e) => restoreGrid());
 size_button.addEventListener('click', (e) => resizeGrid());
-
-
-
-
-
-
-
-
-
-
-
-
+rainbow_button.addEventListener('click', (e) => toggleRainbow());
