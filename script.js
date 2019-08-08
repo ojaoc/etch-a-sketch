@@ -22,11 +22,11 @@ function selectColor(color) {
     if (!color) {
         color = '#191919';
     }
-    let gridBlockNodeList = container_div.querySelectorAll('div');
-    let gridBlocksArray = Array.from(gridBlockNodeList);
-    gridBlocksArray.forEach(block => {
+        let gridBlockNodeList = container_div.querySelectorAll('div');
+        let gridBlocksArray = Array.from(gridBlockNodeList);
+        gridBlocksArray.forEach(block => {
         block.addEventListener('mouseover', (e) => e.target.style.backgroundColor = color);
-    });
+        });
 }
 
 function resetGrid() {
@@ -53,7 +53,18 @@ function resizeGrid() {
 }
 
 function toggleRainbow() {
+    let rainbowArray = ['#9400D3', '#4B0082', '#0000FF', '#00FF00', '#FFFF00', '#FF7F00', '#FF0000'];
+    let randomNumber = Math.floor(Math.random() * (rainbowArray.length-1));
+    let gridSize = container_div.childElementCount;
     
+    resetGrid();
+    createGrid(Math.sqrt(gridSize));
+    
+    let gridBlockNodeList = container_div.querySelectorAll('div');
+    let gridBlocksArray = Array.from(gridBlockNodeList);
+    gridBlocksArray.forEach(block => {
+    block.addEventListener('mouseover', (e) => e.target.style.backgroundColor = rainbowArray[randomNumber]);
+    });
 }
 
 createGrid(16);
