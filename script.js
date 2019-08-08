@@ -43,13 +43,25 @@ function restoreGrid() {
 }
 
 function resizeGrid() {
-    let selected_size = prompt('How many squares would you like? W=H; Default= 16x16', 16);
+    let selected_size = prompt('How many squares would you like? Minimum size: 8; W=H; Default= 16x16');
+    
     if (Math.pow(selected_size, 2) == container_div.childElementCount) {
-        return alert('That size is already set.');
+        alert('That size is already set.');
+        return resizeGrid();
     }
-    resetGrid();
-    createGrid(selected_size);
-    selectColor();
+
+    if (selected_size < 8 && selected_size != null) {
+        alert ('Invalid size.');
+        return resizeGrid();
+    
+    } else if (selected_size === null) {
+        return;
+    
+    } else {
+        resetGrid();
+        createGrid(selected_size);
+        selectColor();
+    }
 }
 
 function toggleRainbow() {
