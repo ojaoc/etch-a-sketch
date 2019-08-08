@@ -54,7 +54,6 @@ function resizeGrid() {
 
 function toggleRainbow() {
     let rainbowArray = ['#9400D3', '#4B0082', '#0000FF', '#00FF00', '#FFFF00', '#FF7F00', '#FF0000'];
-    let randomNumber = Math.floor(Math.random() * (rainbowArray.length-1));
     let gridSize = container_div.childElementCount;
     
     resetGrid();
@@ -62,8 +61,12 @@ function toggleRainbow() {
     
     let gridBlockNodeList = container_div.querySelectorAll('div');
     let gridBlocksArray = Array.from(gridBlockNodeList);
+    
     gridBlocksArray.forEach(block => {
-    block.addEventListener('mouseover', (e) => e.target.style.backgroundColor = rainbowArray[randomNumber]);
+        block.addEventListener('mouseover', (e) => {
+            let randomNumber = Math.floor(Math.random() * (rainbowArray.length-1));
+            e.target.style.backgroundColor = rainbowArray[randomNumber];
+        });
     });
 }
 
